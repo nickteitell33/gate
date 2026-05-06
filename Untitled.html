@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Entry</title>
+    <style>
+        body { background: #F5F3ED; display: flex; height: 100vh; align-items: center; justify-content: center; margin: 0; font-family: sans-serif; }
+        input { padding: 15px; border: 1px solid #000; background: transparent; text-align: center; font-size: 18px; outline: none; width: 250px; }
+        h1 { font-weight: 300; letter-spacing: 3px; position: absolute; top: 40%; }
+    </style>
+</head>
+<body>
+    <h1>PRIVATE ACCESS</h1>
+    <input type="password" id="gate" placeholder="Type anything..." autofocus>
+
+    <script>
+        const input = document.getElementById('gate');
+        input.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter' && input.value.length > 0) {
+                // REDIRECT TO YOUR ACTUAL SITE
+                window.location.href = "https://your-site-name.squarespace.com/home";
+            }
+        });
+    </script>
+</body>
+</html>
