@@ -65,6 +65,78 @@
         input.addEventListener('keypress', (e) => {
             if (e.key === 'Enter' && input.value.length > 0) {
                 // Ensure this points to your specific Squarespace /home URL
+                window.location.href = "https://nicholasteitell.wordpress.com/";
+            }
+        });
+    </script>
+</body>
+</html><!DOCTYPE html>
+<html>
+<head>
+    <title>Entry</title>
+    <style>
+        body { 
+            background: #F5F3ED; 
+            display: flex; 
+            height: 100vh; 
+            flex-direction: column;
+            align-items: center; 
+            justify-content: center; 
+            margin: 0; 
+            font-family: sans-serif; 
+            color: #000;
+        }
+        
+        h1 { 
+            font-weight: 300; 
+            letter-spacing: 2px; 
+            font-size: 14px; 
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            opacity: 0.6;
+        }
+
+        input { 
+            padding: 12px; 
+            border: 1px solid #000; 
+            background: transparent; 
+            text-align: center; 
+            font-size: 18px; 
+            outline: none; 
+            width: 220px; 
+            letter-spacing: 6px;
+            caret-color: transparent; 
+            -webkit-text-security: disc;
+            transition: all 0.3s ease;
+        }
+
+        /* Returns cursor ONLY when clicked */
+        input:focus {
+            caret-color: #000;
+        }
+
+        input::placeholder {
+            color: #000;
+            opacity: 0.3;
+            transition: opacity 0.2s ease;
+        }
+
+        input:focus::placeholder {
+            opacity: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>this space is password protected</h1>
+    
+    <input type="text" id="gate" placeholder="****" autocomplete="off" spellcheck="false">
+
+    <script>
+        const input = document.getElementById('gate');
+        input.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter' && input.value.length > 0) {
+                // Ensure this points to your specific Squarespace /home URL
                 window.location.href = "https://nicholasteitell.wordpress.com";
             }
         });
