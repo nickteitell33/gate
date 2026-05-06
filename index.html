@@ -21,7 +21,7 @@
             font-size: 14px; 
             text-transform: uppercase;
             margin-bottom: 20px;
-            opacity: 0.7;
+            opacity: 0.6;
         }
 
         input { 
@@ -32,19 +32,28 @@
             font-size: 18px; 
             outline: none; 
             width: 220px; 
-            letter-spacing: 4px;
+            letter-spacing: 6px;
+            /* HIDES THE BLINKING CURSOR */
+            caret-color: transparent; 
+            transition: all 0.3s ease;
         }
 
-        /* Styles the asterisk placeholder to be subtle */
+        /* Styles the asterisks */
         input::placeholder {
             color: #000;
             opacity: 0.3;
+            transition: opacity 0.2s ease;
+        }
+
+        /* MAKES ASTERISKS DISAPPEAR ON CLICK */
+        input:focus::placeholder {
+            opacity: 0;
         }
     </style>
 </head>
 <body>
 
-    <h1>the door is locked</h1>
+    <h1>this space is password protected</h1>
     
     <input type="password" id="gate" placeholder="****" autofocus>
 
@@ -52,7 +61,7 @@
         const input = document.getElementById('gate');
         input.addEventListener('keypress', (e) => {
             if (e.key === 'Enter' && input.value.length > 0) {
-                // Change the link below to your Squarespace home page
+                // Ensure this points to your specific Squarespace URL
                 window.location.href = "https://nicholasteitell.wordpress.com/";
             }
         });
