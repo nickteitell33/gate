@@ -33,19 +33,27 @@
             outline: none; 
             width: 220px; 
             letter-spacing: 6px;
-            /* HIDES THE BLINKING CURSOR */
+            
+            /* 1. HIDE CURSOR BY DEFAULT */
             caret-color: transparent; 
+            
+            /* 2. HIDE TEXT AS DOTS WITHOUT TELLING BROWSER IT'S A PASSWORD */
+            -webkit-text-security: disc;
+            
             transition: all 0.3s ease;
         }
 
-        /* Styles the asterisks */
+        /* 3. RETURN CURSOR ON CLICK */
+        input:focus {
+            caret-color: #000;
+        }
+
         input::placeholder {
             color: #000;
             opacity: 0.3;
             transition: opacity 0.2s ease;
         }
 
-        /* MAKES ASTERISKS DISAPPEAR ON CLICK */
         input:focus::placeholder {
             opacity: 0;
         }
@@ -55,7 +63,7 @@
 
     <h1>this space is password protected</h1>
     
-    <input type="password" id="gate" placeholder="****" autofocus>
+    <input type="text" id="gate" placeholder="****" autofocus autocomplete="off" spellcheck="false">
 
     <script>
         const input = document.getElementById('gate');
